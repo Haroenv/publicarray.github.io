@@ -1,0 +1,329 @@
+@import 'pocketgrid';
+
+/*
+ *
+ *  Fonts
+ */
+@font-face {
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Josefin Sans"), local("JosefinSans"), url(http://themes.googleusercontent.com/static/fonts/josefinsans/v5/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
+}
+
+/*
+ *
+ *  Global
+ */
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.75em;
+    margin: 0;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #888;
+    font-weight: 300;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 50px;
+    margin: 32px 0 32px 0;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    text-align: center;
+}
+h3 {
+    font-weight: 600;
+    font-size: 1.6em;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+a {
+    color: #007fff;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #0059b3;
+    text-decoration: underline;
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.masonry img{
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.subline {
+    padding: 0 0 12px 0;
+    margin: 0 0 2em 0;
+    font-size: 1.5em;
+    line-height: 1.75em;
+    color: #333;
+    font-weight: 300;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007fff;
+    border-color: #006ad6;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 20px 25px;
+    font-size: 1em;
+    line-height: 1.5;
+    border-radius: 0;
+    text-shadow: 0px 0px 0px #000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0059b3;
+    border-color: #004284;
+    // box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    -webkit-user-select: none;
+}
+.red {
+    background-color: #d0212c;
+    color: #fff;
+}
+.green {
+    background-color: #3cb400;
+    color: #fff;
+}
+
+/*
+ *
+ *  Helper classes
+ */
+
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.shadow {
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.shadow:hover{
+    background: rgba(255,255,255,1);
+}
+
+.white {
+    color: #fff;
+}
+
+.black{
+    color: #000;
+}
+
+.mob{
+    padding: 0; /* remove padding in mobile browsers */
+}
+
+.round{
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+/*
+ *
+ *  Desktop classes
+ */
+@media (min-width: 745px) {
+    .btn{
+        width: 300px;
+    }
+
+    .mob{
+        padding: 0 20px;
+    }
+    .round{
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+}
+
+/*
+ *
+ *  Contact Me Form
+ */
+
+textarea {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1em;
+    line-height: 1.85em;
+    font-weight: 300;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb;
+    background: #2d2d2d;
+    color: #bbb;
+    // box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+textarea:focus{
+    border-bottom: 1px solid #007fff;
+}
+
+input {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1em;
+    line-height: 1.85em;
+    font-weight: 300;
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb;
+    background: #2d2d2d;
+    color: #bbb;
+    // box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+input:focus{
+    border-bottom: 1px solid #007fff;
+}
+
+/*
+ *
+ *  Find me at... social buttons
+ */
+.social {
+    display: block;
+    text-align: center;
+    list-style: none;
+    padding: 0px;
+}
+.social li {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    margin: 5px 10px;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
+}
+.social li:hover {
+    opacity: 1;
+}
+
+/*
+ *
+ *  Sprites
+ *
+*/
+.social a{
+    background: url('../img/sprite.png') no-repeat top left;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    zoom:0.60;
+    -moz-transform:scale(0.60);
+    -moz-transform-origin: 0 0;
+}
+@media (min-width: 745px) {
+    .social li {
+        margin: 15px 25px;
+        width: 100px;
+        height: 100px;
+    }
+    .social a{
+        zoom:1;
+        -moz-transform:scale(1);
+        -moz-transform-origin: 0 0;
+
+    }
+}
+
+a.px500{ background-position: 0 0; }
+a.aboutme{ background-position: 0 -150px; }
+a.behance{ background-position: 0 -300px; }
+a.email{ background-position: 0 -450px; }
+a.facebook{ background-position: 0 -600px; }
+a.flickr{ background-position: 0 -750px; }
+a.github{ background-position: 0 -900px; }
+a.googleplus{ background-position: 0 -1050px; }
+a.instagram{ background-position: 0 -1200px; }
+a.linkedin{ background-position: 0 -1350px; }
+a.messenger-generic{ background-position: 0 -1500px; }
+a.picasa{ background-position: 0 -1650px; }
+a.rss{ background-position: 0 -1800px; }
+a.skype{ background-position: -150px 0; }
+a.smarterer{ background-position: -150px -150px; }
+a.soundcloud{ background-position: -150px -300px; }
+a.spotify{ background-position: -150px -450px; }
+a.stackoverflow{ background-position: -150px -600px; }
+a.vimeo{ background-position: -150px -750px; }
+a.youtube{ background-position: -150px -900px; }
+
+@import 'responsive-nav';
