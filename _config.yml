@@ -3,6 +3,6 @@ pygments: true
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 author :
   name : Sebastian Schmidt
-  email : publicarray@icliud.com
+  email : publicarray@icloud.com
   github : publicarray
 production_url : http://publicarray.github.io

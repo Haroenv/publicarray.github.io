@@ -215,6 +215,7 @@
                                 rq.onreadystatechange = function() {
                                     if(this.readyState == 4 && this.status == 200){
                                         document.getElementById("response").innerHTML = this.responseText;
+                                        //document.getElementsByName('form')[0].reset();
                                     }
                                     if(this.readyState == 4 && (this.status < 200 || this.status >= 400)) {
                                             // The request failed; fall back to e-mail client
@@ -287,7 +288,6 @@
         </div>
     <script src="js/responsive-nav.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/session.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
         var nav = responsiveNav(".nav-collapse");
         smoothScroll.init({
