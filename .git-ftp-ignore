@@ -1,0 +1,8 @@
+\.gitignore
+config\.codekit
+Gemfile
+Gemfile\.lock
+README\.md
+_config\.yml
+sass/.*
+social/.*

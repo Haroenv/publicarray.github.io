@@ -1,5 +1,4 @@
-<?php session_start();
-unset($_SESSION['success']);
+<?php
 
 // Change email and subject.
 $email_to = "publicarray@icloud.com";
@@ -49,12 +48,9 @@ if (empty($_POST['message'])) {
 
 // If there are no errors than send the email otherwise show error message(s) and redirect back to index.php
 if (empty($error)) {
-    unset($_SESSION['error']);
     sendEmail($name, $email, $email_to, $subject, $message);
 } else{
-    $_SESSION['error'] = $error;
-    session_write_close();
-    header("Location: index.php#contact");
+    echo '<div class="block"><div class="alert red">'.$error.'</div></div>';
     exit;
 }
 
@@ -84,14 +80,10 @@ function sendEmail($name, $email_from, $email_to, $email_subject, $message){
 
     // actually send email & redirect
     if (mail($email_to, $email_subject, $email_message, $headers)){
-        $_SESSION['success'] = ('Message Send!');
-        header("Location: index.php#contact");
+        echo '<div class="block"><div class="alert green">Message Send!</div></div>';
     }
     else {
-        session_start();
-        $_SESSION['error'] = ('Sorry, but it there was a problem sending this email. <br /> Please try again later or send it  directly to: admin@publicarray.com');
-        session_write_close();
-        header("Location: index.php#contact");
+        echo '<div class="block"><div class="alert red">Sorry, but it there was a problem sending this email. <br /> Please try again later or send it  directly to: admin@publicarray.com</div></div>';
     }
 }
 
