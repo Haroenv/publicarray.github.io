@@ -44,7 +44,7 @@
 /*  Masonry mobile */
 .masonry { width: 100%; margin: 1.5em 0; padding: 0; -moz-column-count: 1; -webkit-column-count: 1; column-count: 1; -moz-column-gap: 1.5em; -webkit-column-gap: 1.5em; column-gap: 1.5em; }
 
-.box { display: inline-block; padding: 1.5em; margin: 0 0 1.5em; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-box-sizing: border-box; }
+.box { display: inline-block; padding: 0 1.5em; margin: 0 0 1.5em; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-box-sizing: border-box; }
 
 /*  Masonry Tablet/Laptop */
 @media (min-width: 745px) { .masonry { -moz-column-count: 1; -webkit-column-count: 1; column-count: 1; } }
