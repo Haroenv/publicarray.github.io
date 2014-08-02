@@ -92,12 +92,15 @@
 
 .wrapper{
     width: 100%;
-    padding: 5em 0;
+    padding: 4em 0 1em 0;
     margin: auto;
 }
 @media (min-width: 745px) {
     .wrapper{
-        padding: 10em 0;
+        padding: 5em 0 4em 0;
+    }
+    .header{
+        padding: 9em 0 7em 0;
     }
 }
 
@@ -143,11 +146,22 @@
 
 .box{
     display: inline-block;
+    position: relative;
     padding: 0 1.5em;
     margin: 0 0 1.5em;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+}
+
+.masonry a>img{
+    width: auto;
+}
+.masonry>.box>a{
+    position: relative;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    display: block;
 }
 
 /*

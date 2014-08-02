@@ -86,7 +86,7 @@ img {
 .btn {
     text-decoration: none;
     color: #fff;
-    background-color: #007fff;
+    background-color: rgba(0,0,0, 0.3);
     border-color: #006ad6;
     display: inline-block;
     margin-bottom: 0;
@@ -95,7 +95,7 @@ img {
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
-    border: 1px solid transparent;
+    border: 3px solid;
     white-space: nowrap;
     padding: 20px 25px;
     font-size: 1em;
@@ -113,8 +113,10 @@ img {
     text-decoration: none;
     color: #fff;
     background-color: #0059b3;
-    border-color: #004284;
-    // box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+.btn:focus{
+    // fix bottom button border in form when in focus
+    border-bottom: 3px solid #fff;
 }
 
 .alert {
@@ -217,7 +219,6 @@ textarea {
     border-bottom: 1px solid #bbb;
     background: #2d2d2d;
     color: #bbb;
-    // box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     -webkit-appearance: none;
     box-sizing: border-box;
     -webkit-transition: all 0.4s ease;
@@ -240,7 +241,6 @@ input {
     border-bottom: 1px solid #bbb;
     background: #2d2d2d;
     color: #bbb;
-    // box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     -webkit-appearance: none;
     box-sizing: border-box;
     -webkit-transition: all 0.4s ease;
