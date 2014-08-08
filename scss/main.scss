@@ -86,35 +86,29 @@ img {
 .btn {
     text-decoration: none;
     color: #fff;
-    background-color: rgba(0,0,0, 0.3);
-    border-color: #006ad6;
+    background: rgba(0,0,0, 0.3);
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    background-image: none;
-    border: 3px solid;
+    border: 3px solid #fff;
     white-space: nowrap;
     padding: 20px 25px;
     font-size: 1em;
     line-height: 1.5;
     border-radius: 0;
     text-shadow: 0px 0px 0px #000;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
-.btn:hover {
+.btn:hover, .btn:active {
     text-decoration: none;
     color: #fff;
-    background-color: #0059b3;
+    background: #0059b3;
 }
-.btn:focus{
+.btn:focus {
     // fix bottom button border in form when in focus
     border-bottom: 3px solid #fff;
 }
@@ -287,7 +281,7 @@ input:focus{
     height: 100px;
     text-indent: -9999px;
     border-radius: 50%;
-    zoom:0.60;
+    zoom: 0.60;
     -moz-transform:scale(0.60);
     -moz-transform-origin: 0 0;
 }
@@ -298,7 +292,7 @@ input:focus{
         height: 100px;
     }
     .social a{
-        zoom:1;
+        zoom: 1;
         -moz-transform:scale(1);
         -moz-transform-origin: 0 0;
 

@@ -15,7 +15,8 @@
  *  Global
  */
 .block-group {
-    *zoom: 1;
+    //*zoom: 1;
+    overflow: hidden;
 }
 .block-group:before, .block-group:after {
     display: table;
