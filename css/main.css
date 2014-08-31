@@ -183,17 +183,17 @@ a.youtube { background-position: -150px -900px; }
 
 /*! responsive-nav.js 1.0.32 by @viljamis */
 /* Mobile Style  */
-nav { background: #222; width: 100%; display: block; z-index: 1; }
+nav { background: rgba(255, 255, 255, 0.9); width: 100%; overflow: hidden; display: block; z-index: 2; }
 nav:after { margin-bottom: 56px; }
 
 .nav-collapse { float: left; width: 100%; }
 .nav-collapse.opened { max-height: 9999px; }
 .nav-collapse ul { margin: 0; padding: 0; display: block; float: left; text-align: center; list-style: none; width: 100%; }
 .nav-collapse li { display: block; float: left; width: 100%; }
-.nav-collapse a { -webkit-tap-highlight-color: transparent; text-decoration: none; background: #222; padding: 0.7em 1em; color: #fff; width: 100%; float: left; -webkit-transition: all 0.4s ease; transition: all 0.4s ease; }
+.nav-collapse a { -webkit-tap-highlight-color: transparent; text-decoration: none; background: rgba(255, 255, 255, 0.7); padding: 0.7em 1em; color: #000; width: 100%; float: left; -webkit-transition: all 0.4s ease; transition: all 0.4s ease; }
 .nav-collapse a:hover, .nav-collapse a:active { color: #007fff; }
 .nav-collapse .active a, .nav-collapse .active a:hover { color: #007fff; }
-.nav-collapse ul ul a { background: #222; padding-left: 2em; }
+.nav-collapse ul ul a { background: #fff; padding-left: 2em; }
 
 /*  Required */
 .js .nav-collapse { clip: rect(0 0 0 0); max-height: 0; position: absolute; display: block; overflow: hidden; zoom: 1; }
@@ -211,10 +211,10 @@ nav:after { margin-bottom: 56px; }
   .nav-toggle { display: none; }
   .nav-collapse ul { height: 56px; }
   .nav-collapse li { position: relative; display: inline-block; float: none; width: auto; }
-  .nav-collapse a { padding: 14px 15px 9px 15px; }
+  .nav-collapse a { background: none; padding: 14px 15px 9px 15px; }
   .nav-collapse ul ul a { display: none; } }
 /*  Toggle Button */
 @font-face { font-family: "responsivenav"; src: url("../fonts/responsivenav.eot"); src: url("../fonts/responsivenav.eot?#iefix") format("embedded-opentype"), url("../fonts/responsivenav.ttf") format("truetype"), url("../fonts/responsivenav.woff") format("woff"), url("../fonts/responsivenav.svg#responsivenav") format("svg"); font-weight: normal; font-style: normal; }
-.nav-toggle { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-decoration: none; text-indent: -300px; position: relative; overflow: hidden; width: 100%; height: 55px; float: right; background: #222; }
-.nav-toggle:before { color: #fff; font: normal 28px/55px "responsivenav"; text-transform: none; text-align: right; position: absolute; content: "\2261"; text-indent: 0; speak: none; width: 100%; right: 20px; top: 0; }
+.nav-toggle { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-decoration: none; text-indent: -300px; position: relative; overflow: hidden; width: 100%; height: 55px; float: right; background: rgba(255, 255, 255, 0.7); }
+.nav-toggle:before { color: #000; font: normal 28px/55px "responsivenav"; text-transform: none; text-align: right; position: absolute; content: "\2261"; text-indent: 0; speak: none; width: 100%; right: 20px; top: 0; }
 .nav-toggle.active:before { font-size: 24px; content: "\78"; }
