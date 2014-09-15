@@ -55,7 +55,7 @@ a {
     color: #007fff;
     text-decoration: none;
 }
-a:hover, a:focus {
+a:hover{
     color: #0059b3;
     text-decoration: underline;
 }
@@ -103,21 +103,25 @@ img {
     text-shadow: 0px 0px 0px #000;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
+    box-shadow: 0 2px 0px transparent;
 }
 .btn:hover, .btn:active {
     text-decoration: none;
     color: #fff;
     background: #0059b3;
+    // box-shadow: 0 2px 2px #999;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 .btn:focus {
     // fix bottom button border in form when in focus
-    border-bottom: 3px solid #fff;
+    border: 3px solid #fff;
 }
 
 .alert {
     padding: 15px;
     margin-bottom: 20px;
     -webkit-user-select: none;
+    box-shadow: 0 1px 3px #222;
 }
 .red {
     background-color: #d0212c;
