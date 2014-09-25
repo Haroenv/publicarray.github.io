@@ -10,9 +10,12 @@
     </head>
     <body id="top">
         <nav role="navigation">
-            <!--[if lte IE 8]>
-                <p class="browsehappy">You are using an outdated browser. Please <a href="http://whatbrowser.org">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <![endif]-->
+        <!--[if lte IE 8]>
+            <p class="browsehappy">You are using an outdated browser. Please <a href="http://whatbrowser.org">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
             <div class="nav-collapse">
                 <ul>
                     <li>
@@ -216,37 +219,36 @@
                         var message = document.getElementsByName('message')[0].value;
                         return 'title='+title + '&name='+name + '&email='+email + '&subject='+subject + '&message='+message;
                     }
+                    function styleError(msg){
+                        return '<div class="block"><div class="alert red">' + msg + '</div></div>';
+                    }
 
                     function sendMail() {
-                         var rq;
-                         if(rq = new Ajax()) {
-                             // Success; attempt to use an Ajax request to a PHP script to send the e-mail
-                             try {
+                        var rq;
+                        if(rq = new Ajax()) {
+                            // Success; attempt to use an Ajax request to a PHP script to send the e-mail
+                            try {
                                 rq.open('POST', 'http://www.publicarray.com/email_action.php', true);
                                 rq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
                                 rq.onreadystatechange = function() {
-                                    if(this.readyState == 4 && this.status == 200){
+                                    if(this.readyState == 4 && this.status == 200) {
                                         document.getElementById("response").innerHTML = this.responseText;
-                                        //document.getElementsByName('form')[0].reset();
                                     }
-                                    if(this.readyState == 4 && (this.status < 200 || this.status >= 400)) {
-                                            // The request failed; fall back to e-mail client
-                                            document.getElementById("response").innerHTML = "the request failed with status code: "+this.status;
-                                            window.open('mailto:publicarray@icloud.com');
+                                    else if(this.readyState == 4 && (this.status === 0)) {
+                                        document.getElementById("response").innerHTML = styleError("Unable to connect to the Internet. Please try again later.");
+                                    }
+                                    else if(this.readyState == 4 && (this.status < 200 || this.status >= 400)) {
+                                        document.getElementById("response").innerHTML = styleError("The request failed with status code: " + this.status);
                                     }
                                 }
                                 rq.send(getParm());
-                             } catch(fail) {
-                                document.getElementById("response").innerHTML = "the request failed with unknown reason";
-                                 // Failed to open the request; fall back to e-mail client
-                                 window.open('mailto:publicarray@icloud.com');
-                             }
-                         } else {
-                            document.getElementById("response").innerHTML = "the request failed because client doesn't support AJAX.";
-                             // Failed to create the request; fall back to e-mail client
-                             window.open('mailto:publicarray@icloud.com');
-                         }
-                         smoothScroll.animateScroll( null, '#contact' );
+                            } catch(fail) {
+                                document.getElementById("response").innerHTML = styleError("The request failed with an unknown error");
+                            }
+                        } else {
+                            document.getElementById("response").innerHTML = styleError("The request failed because the Browser doesn't support Ajax.");
+                        }
+                        smoothScroll.animateScroll( null, '#contact' );
                     }
                 </script>
                 <form class="block mob" name="form" method="post" action="#contact">
