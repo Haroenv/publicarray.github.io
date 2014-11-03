@@ -52,6 +52,8 @@
         width: 100%;
         float: left;
         -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
         transition: all 0.4s ease;
         &:hover, &:active{
             color: #007fff;
@@ -108,7 +110,9 @@
  @media screen and (min-width: 40em) {
     nav{
         position: fixed;
+        -moz-box-shadow: 0 1px 3px #999;
         box-shadow: 0 1px 3px #999;
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
         box-shadow: 0 1px 3px rgba(0,0,0,0.4);
     }
     .js .nav-collapse {
