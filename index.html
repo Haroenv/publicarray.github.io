@@ -241,8 +241,8 @@
                     }
 
                     function sendMail() {
-                        var rq;
-                        if(rq = new Ajax()) {
+                        var rq = new Ajax();
+                        if(rq !== null) {
                             // Success; attempt to use an Ajax request to a PHP script to send the e-mail
                             try {
                                 rq.open('POST', 'http://www.publicarray.com/email_action.php', true);
@@ -257,7 +257,7 @@
                                     else if(this.readyState == 4 && (this.status < 200 || this.status >= 400)) {
                                         document.getElementById("response").innerHTML = styleError("The request failed with status code: " + this.status);
                                     }
-                                }
+                                };
                                 rq.send(getParm());
                             } catch(fail) {
                                 document.getElementById("response").innerHTML = styleError("The request failed with an unknown error");
@@ -298,7 +298,7 @@
                 <div class="block">
                     <h3 class="white">Find me on ...</h3>
                     <ul class="social">
-                        <li><a class="facebook" rel="nofollow" href="http://facebook.com/sb00k/" target="_blank">Facebook</a></li>
+                        <li><a class="facebook" rel="nofollow" href="http://facebook.com/100001620276051/" target="_blank">Facebook</a></li>
                         <li><a class="linkedin" rel="nofollow" href="http://linkedin.com/in/publicarray/" target="_blank">Linkedin</a></li>
                         <li><a class="googleplus" rel="nofollow" href="http://plus.google.com/113026797176089149604" target="_blank">Google Plus</a></li>
                         <li><a class="flickr" rel="nofollow" href="http://flickr.com/photos/sschmidt-photography/" target="_blank">Flickr</a></li>
