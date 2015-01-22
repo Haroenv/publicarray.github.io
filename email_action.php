@@ -13,12 +13,12 @@ function has_header_injection ($str) {
 }
 
 $spam = $_POST['title'];
-$name = htmlspecialchars(trim($_POST['name']);
-$subject = htmlspecialchars(trim($_POST['subject']);
-$email_from = htmlspecialchars(trim($_POST['email'])
+$name = htmlspecialchars(trim($_POST['name']));
+$subject = htmlspecialchars(trim($_POST['subject']));
+$email_from = htmlspecialchars(trim($_POST['email']));
 $message = htmlspecialchars($_POST['message']);
 
-if (has_header_injection($name) || has_header_injection($subject) || has_header_injection($email))
+if (has_header_injection($name) || has_header_injection($subject) || has_header_injection($email_from))
 
 if (strlen($spam > 0)) {
     $error.= 'Sorry, but it appears a Spam Boot is trying to submit this form. <br>';
@@ -32,7 +32,7 @@ if (empty($name)) {
     }
 }
 
-if (empty($subject) {
+if (empty($subject)) {
     // $error.= 'Please enter a Subject. <br>';
 } else {
     if(!preg_match($string_exp, $name)) {
@@ -73,7 +73,7 @@ function sendEmail($name, $from, $to, $user_subject, $msg){
         $bad = array("content-type","bcc:","to:","cc:","href");
         return str_replace($bad,"",$string);
     }
-    $subject = "$name send you a message via your contact form"
+    $subject = "$name send you a message via your contact form";
 
     $message = "Name: ".clean_string($name)."\r\n";
     $message .= "Email: ".clean_string($from)."\r\n";
@@ -86,11 +86,11 @@ function sendEmail($name, $from, $to, $user_subject, $msg){
     // create email headers From, Cc and Bcc.
     $headers = "MINE-Version: 1.0\r\n";
     $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
-    $headers .= "From: $name <$email_from>\r\n";
+    $headers .= "From: $name <$from>\r\n";
     // $headers .= "Cc: publicarray@icloud.com\r\n";
     // $headers .= "Bcc: admin@publicarray.com\r\n";
 
-    'Reply-To: '.$email_from."\r\n" .
+    'Reply-To: '.$from."\r\n" .
     'X-Mailer: PHP/' . phpversion();
     set_time_limit(0);
 
