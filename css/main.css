@@ -41,7 +41,7 @@
 @media (min-width: 990px) { .masonry { -ms-column-count: 2; -moz-column-count: 2; -webkit-column-count: 2; column-count: 2; } }
 @media (min-width: 1200px) { .masonry { -ms-column-count: 3; -moz-column-count: 3; -webkit-column-count: 3; column-count: 3; } }
 /*  Fonts */
-@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 400; src: local("Josefin Sans"), local("JosefinSans"), url(http://themes.googleusercontent.com/static/fonts/josefinsans/v5/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff"); }
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 400; src: local("Josefin Sans"), local("JosefinSans"), url(//themes.googleusercontent.com/static/fonts/josefinsans/v5/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff"); }
 /*  Global */
 body { font-family: "Josefin Sans", sans-serif; font-size: 1.2em; line-height: 1.75em; margin: 0; }
 
