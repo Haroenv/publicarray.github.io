@@ -2,45 +2,55 @@
 
 // Change email and subject.
 $email_to = "publicarray@icloud.com";
-$subject = "My Profile";
 
 // Error Checking, Validation and Sanitisation of user input.
 $error = '';
 $email_exp = '/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 $string_exp = "/^[A-Za-z .'-äüöÄÜÖ]+$/";
 
-if (strlen($_POST['title'] > 0)) {
+function has_header_injection ($str) {
+    return preg_match("/[\r\n]/", $str);
+}
+
+$spam = $_POST['title'];
+$name = htmlspecialchars(trim($_POST['name']);
+$subject = htmlspecialchars(trim($_POST['subject']);
+$email_from = htmlspecialchars(trim($_POST['email'])
+$message = htmlspecialchars($_POST['message']);
+
+if (has_header_injection($name) || has_header_injection($subject) || has_header_injection($email))
+
+if (strlen($spam > 0)) {
     $error.= 'Sorry, but it appears a Spam Boot is trying to submit this form. <br>';
 }
 
-if (empty($_POST['name'])) {
+if (empty($name)) {
     $error.= 'Please enter your Name. <br>';
 } else {
-    $name = htmlspecialchars($_POST['name']);
     if(!preg_match($string_exp, $name)) {
       $error.= 'You entered unknown characters as your Name. Use A-Z, dots or slashes only. <br>';
     }
 }
 
-if (empty($_POST['subject'])) {
+if (empty($subject) {
     // $error.= 'Please enter a Subject. <br>';
 } else {
-    $subject = htmlspecialchars($_POST['subject']);
+    if(!preg_match($string_exp, $name)) {
+      $error.= 'You entered unknown characters as your Subject. Use A-Z, dots or slashes only. <br>';
+    }
 }
 
-if (empty($_POST['email'])) {
+if (empty($email_from)) {
     $error.= 'Please enter an Email Address. <br>';
 } else {
-    $email = htmlspecialchars($_POST['email']);
-    if(!preg_match($email_exp, $email)) {
+    if(!preg_match($email_exp, $email_from)) {
       $error.= 'Please enter a valid Email Address. <br>';
     }
 }
 
-if (empty($_POST['message'])) {
+if (empty($message)) {
     $error.= 'Please enter a Message. <br>';
 } else {
-    $message = htmlspecialchars($_POST['message']);
     if(strlen($message) < 3) {
       $error.= 'Please enter a Message. <br>';
     }
@@ -48,14 +58,14 @@ if (empty($_POST['message'])) {
 
 // If there are no errors than send the email otherwise show error message(s) and redirect back to index.php
 if (empty($error)) {
-    sendEmail($name, $email, $email_to, $subject, $message);
+    sendEmail($name, $email_from, $email_to, $subject, $message);
 } else{
     echo '<div class="block"><div class="alert red">'.$error.'</div></div>';
     exit;
 }
 
 // Send email method
-function sendEmail($name, $email_from, $email_to, $email_subject, $message){
+function sendEmail($name, $from, $to, $user_subject, $msg){
 
     // check strings for cross site scripting (illegal characters).
     function clean_string($string) {
@@ -63,14 +73,20 @@ function sendEmail($name, $email_from, $email_to, $email_subject, $message){
         $bad = array("content-type","bcc:","to:","cc:","href");
         return str_replace($bad,"",$string);
     }
+    $subject = "$name send you a message via your contact form"
 
-    $email_message = "Name: ".clean_string($name)."\r\n";
-    $email_message .= "Email: ".clean_string($email_from)."\r\n";
-    $email_message .= "Message: \r\n".clean_string($message)."\r\n";
-    $email_message = wordwrap($email_message, 70, "\r\n");
+    $message = "Name: ".clean_string($name)."\r\n";
+    $message .= "Email: ".clean_string($from)."\r\n";
+    if (isset($subject)) {
+        $message .= "Subject: ".clean_string($user_subject)."\r\n";
+    }
+    $message .= "Message: \r\n".clean_string($msg)."\r\n";
+    $message = wordwrap($message, 72);
 
     // create email headers From, Cc and Bcc.
-    $headers = 'From: '.$email_from."\r\n".
+    $headers = "MINE-Version: 1.0\r\n";
+    $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+    $headers .= "From: $name <$email_from>\r\n";
     // $headers .= "Cc: publicarray@icloud.com\r\n";
     // $headers .= "Bcc: admin@publicarray.com\r\n";
 
@@ -79,7 +95,7 @@ function sendEmail($name, $email_from, $email_to, $email_subject, $message){
     set_time_limit(0);
 
     // actually send email & redirect
-    if (mail($email_to, $email_subject, $email_message, $headers)){
+    if (mail($to, $subject, $message, $headers)){
         echo '<div class="block"><div class="alert green">Message Send!</div></div>';
     }
     else {
