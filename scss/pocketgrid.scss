@@ -50,8 +50,21 @@
 
 /*
  *
- *  Desktop
+ *  User styles
  */
+.masonry {
+    float: left;
+}
+.masonry:before, .masonry:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.box {
+    padding: 0 1.5em;
+    margin-bottom: 1.5em;
+}
+
 @media (min-width: 745px) {
     .block-group{
         width: 740px;
@@ -73,83 +86,41 @@
     }
 }
 
-@media (min-width: 990px) {
-  .block-group{
-    width: 950px;
-  }
+@media (min-width: 990px) and (max-width: 1199px) {
+    .block-group{
+        width: 950px;
+    }
+    .box {
+        width: 48.4%;
+        margin-left: 1.5em;
+    }
+    .box:nth-child(2n+1) {
+      clear: left;
+      margin-left: 0;
+    }
 }
 @media (min-width: 1200px) {
-  .block-group{
-    width: 95%;
-  }
-}
-
-/*
- *
- * Masonry mobile
- */
-.masonry{
-    width: 100%;
-    margin: 1.5em 0;
-    padding: 0;
-
-    -ms-column-count: 1;
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-
-    -ms-column-gap: 1.5em;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
-}
-
-.box{
-    display: inline-block;
-    position: relative;
-    padding: 0 1.5em;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    .block-group{
+        width: 95%;
+    }
+    .box {
+        width: 31.9%;
+        margin-left: 1.5em;
+    }
+    .box:nth-child(3n+1) {
+      clear: left;
+      margin-left: 0;
+    }
 }
 
 .masonry a>img{
     width: auto;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
 }
 .masonry>.box>a{
     position: relative;
     margin-left: -1.5em;
     margin-right: -1.5em;
     display: block;
-}
-
-/*
- *
- * Masonry Tablet/Laptop
- */
-
- @media (min-width: 745px) {
-    .masonry{
-        -ms-column-count: 1;
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-}
- @media (min-width: 990px) {
-    .masonry{
-        -ms-column-count: 2;
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-}
-@media (min-width: 1200px) {
-    .masonry{
-        -ms-column-count: 3;
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
 }

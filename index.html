@@ -13,9 +13,6 @@
     </head>
     <body id="top">
         <nav role="navigation">
-        <!--[if lt IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <![endif]-->
         <!--[if lte IE 8]>
             <p class="browsehappy">You are using an outdated browser. Please <a href="http://whatbrowser.org">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -83,7 +80,7 @@
                     <h2>Some of my Work</h2>
                 </div>
                 <div class="masonry">
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2011</h3>
                         <a href="//publicarray.com/hsc_guide"><img class="center" src="img/hsc.jpg" width="740" height="603" alt=""></a>
@@ -94,7 +91,7 @@
                         </ul>
                         <h3><a href="//publicarray.com/hsc_guide">HSC Study guide</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2013</h3>
                         <a href="//publicarray.com/cuninghamlodge/"><img class="center" src="img/cuninghamlodge.jpg" width="740" height="603" alt=""></a>
@@ -109,7 +106,7 @@
                         </ul>
                         <h3><a href="//publicarray.com/cuninghamlodge/">Cuningham Lodge</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2013</h3>
                         <a rel="nofollow" href="https://github.com/publicarray/mines"><img class="center" src="img/mine.png" width="362" height="426" alt=""></a>
@@ -121,7 +118,7 @@
                         </ul>
                         <h3><a rel="nofollow" href="https://github.com/publicarray/mines">@ GitHub</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2013</h3>
                         <a rel="nofollow" href="https://github.com/publicarray/Mac-Rumors-iOS-app"><img class="center" src="img/macrumors.png" width="320" height="568" alt=""></a>
@@ -134,7 +131,7 @@
                         </ul>
                         <h3><a rel="nofollow" href="https://github.com/publicarray/Mac-Rumors-iOS-app">@ GitHub</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2014</h3>
                         <a href="//publicarray.com/workseek/"><img class="center" src="img/workseek.jpg" width="740" height="603" alt=""></a>
@@ -158,7 +155,7 @@
                         </ul>
                         <h3><a href="//publicarray.com/workseek2/">Work Seek v2</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2014</h3>
                         <a href="//publicarray.com/ThemedPlushy/"><img class="center" src="img/themedplushy.jpg" width="740" height="603" alt=""></a>
@@ -173,7 +170,7 @@
                         </ul>
                         <h3><a href="//publicarray.com/ThemedPlushy/">Themed Plushy</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2014</h3>
                         <a data-scroll href="#top"><img class="center" src="img/profile.jpg" width="740" height="603" alt=""></a>
@@ -186,7 +183,7 @@
                         </ul>
                         <h3><a data-scroll href="#top">Your looking at it!</a></h3>
                     </div>
-                    <div class="box shadow">
+                    <div class="block box shadow">
                         <br>
                         <h3>2014</h3>
                         <a href="http://publicarray.github.io/DMS-Travel/"><img class="center" src="img/dmstravel.jpg" width="740" height="603" alt=""></a>
@@ -328,5 +325,14 @@
             offset: 35, // Integer. How far to offset the scrolling anchor location in pixels
         });
     </script>
+    <!-- For nth-child support in IE6-8 -->
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
     </body>
 </html>
