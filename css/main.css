@@ -3,10 +3,10 @@
 * MIT License
 */
 /* Border-box-sizing */
-.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before { box-sizing: border-box; }
+.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before { box-sizing: border-box; /* Box-sizing polyfill for IE6 and IE7 */ *behavior: url(../js/boxsizing-pocketgrid.htc); }
 
 /*  Global */
-.block-group { overflow: hidden; }
+.block-group { *zoom: 1; overflow: hidden; }
 
 .block-group:before, .block-group:after { display: table; content: ""; line-height: 0; }
 
