@@ -69,7 +69,7 @@
 
 @media (min-width: 745px) {
     .block-group{
-        width: 740px;
+        max-width: 740px;
         margin: 0 auto;
     }
 
@@ -90,7 +90,7 @@
 
 @media (min-width: 990px) and (max-width: 1199px) {
     .block-group{
-        width: 950px;
+        max-width: 950px;
     }
     .box {
         width: 48.4%;
@@ -103,7 +103,7 @@
 }
 @media (min-width: 1200px) {
     .block-group{
-        width: 95%;
+        max-width: 95%;
     }
     .box {
         width: 31.9%;
