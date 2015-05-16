@@ -144,7 +144,7 @@ input:focus { border-bottom: 1px solid #007fff; }
 
 /*  Sprites 
 */
-.social a { background: url("../img/sprite.png") no-repeat top left; display: inline-block; width: 100px; height: 100px; text-indent: -9999px; border-radius: 50%; zoom: 0.60; -webkit-transform: scale(0.6); -webkit-transform-origin: 0 0; -moz-transform: scale(0.6); -moz-transform-origin: 0 0; -ms-transform: scale(0.6); -ms-transform-origin: 0 0; -o-transform: scale(0.6); -o-transform-origin: 0 0; }
+.social a { background: url("../img/sprite.png") no-repeat top left; display: inline-block; width: 100px; height: 100px; text-indent: -9999px; border-radius: 50%; zoom: 0.90; -webkit-transform: scale(0.6); -webkit-transform-origin: 0 0; -moz-transform: scale(0.6); -moz-transform-origin: 0 0; -ms-transform: scale(0.6); -ms-transform-origin: 0 0; -o-transform: scale(0.6); -o-transform-origin: 0 0; }
 
 @media (min-width: 745px) { .social li { margin: 15px 25px; width: 100px; height: 100px; }
   .social a { zoom: 1; -webkit-transform: scale(1); -webkit-transform-origin: 0 0; -moz-transform: scale(1); -moz-transform-origin: 0 0; -ms-transform: scale(1); -ms-transform-origin: 0 0; -o-transform: scale(1); -o-transform-origin: 0 0; -moz-transform: scale(1); -moz-transform-origin: 0 0; } }
@@ -207,7 +207,7 @@ nav:after { margin-bottom: 56px; }
 
 .disable-pointer-events { pointer-events: none !important; }
 
-.nav-toggle { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.nav-toggle { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
 
 .nav-collapse, .nav-collapse * { box-sizing: border-box; }
 
