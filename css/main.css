@@ -47,8 +47,6 @@
 
 .masonry > .box > a { position: relative; margin-left: -1.5em; margin-right: -1.5em; display: block; }
 
-/*  Fonts */
-@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 400; src: local("Josefin Sans"), local("JosefinSans"), url(//themes.googleusercontent.com/static/fonts/josefinsans/v5/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff"); }
 /*  Global */
 body { font-family: "Josefin Sans", sans-serif; font-size: 1.2em; line-height: 1.75em; margin: 0; }
 
