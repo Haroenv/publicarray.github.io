@@ -253,7 +253,7 @@
                         if(rq) {
                             // Success; attempt to use an Ajax request to a PHP script to send the e-mail
                             try {
-                                rq.open('POST', '//publicarray.com/email_action.php', true);
+                                rq.open('POST', 'https://publicarray.com/email_action.php', true);
                                 rq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
                                 rq.onreadystatechange = function() {
                                     if(this.readyState == 4 && this.status == 200) {
@@ -311,7 +311,6 @@
                         <li><a class="googleplus" rel="nofollow" href="//plus.google.com/113026797176089149604" target="_blank">Google Plus</a></li>
                         <li><a class="flickr" rel="nofollow" href="//flickr.com/photos/sschmidt-photography/" target="_blank">Flickr</a></li>
                         <li><a class="github" rel="nofollow" href="//github.com/publicarray/" target="_blank">Git Hub</a></li>
-                        <!-- <li><a class="smarterer" rel="nofollow" href="http://smarterer.com/publicarray" target="_blank">Smarterer</a></li> -->
                     </ul>
                 </div>
             </div>
