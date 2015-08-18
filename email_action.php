@@ -1,5 +1,4 @@
 <?php
-
 // Change email and subject.
 $email_to = "publicarray@icloud.com";
 
@@ -12,47 +11,53 @@ function has_header_injection ($str) {
     return preg_match("/[\r\n]/", $str);
 }
 
-$spam = $_POST['title'];
-$name = htmlspecialchars(trim($_POST['name']));
-$subject = htmlspecialchars(trim($_POST['subject']));
-$email_from = htmlspecialchars(trim($_POST['email']));
-$message = htmlspecialchars($_POST['message']);
-
-if (has_header_injection($name) || has_header_injection($subject) || has_header_injection($email_from))
-
-if (strlen($spam > 0)) {
-    $error.= 'Sorry, but it appears a Spam Boot is trying to submit this form. <br>';
-}
-
-if (empty($name)) {
-    $error.= 'Please enter your Name. <br>';
+if (empty($_POST))
+{
+    exit(1);
+    // $error.= 'Expected POST Request<br>';
 } else {
-    if(!preg_match($string_exp, $name)) {
-      $error.= 'You entered unknown characters as your Name. Use A-Z, dots or slashes only. <br>';
+    $spam = $_POST['title'];
+    $name = htmlspecialchars(trim($_POST['name']));
+    $subject = htmlspecialchars(trim($_POST['subject']));
+    $email_from = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars($_POST['message']);
+
+    if (has_header_injection($name) || has_header_injection($subject) || has_header_injection($email_from))
+
+    if (strlen($spam > 0)) {
+        $error.= 'Sorry, but it appears a Spam Boot is trying to submit this form. <br>';
     }
-}
 
-if (empty($subject)) {
-    // $error.= 'Please enter a Subject. <br>';
-} else {
-    if(!preg_match($string_exp, $name)) {
-      $error.= 'You entered unknown characters as your Subject. Use A-Z, dots or slashes only. <br>';
+    if (empty($name)) {
+        $error.= 'Please enter your Name. <br>';
+    } else {
+        if(!preg_match($string_exp, $name)) {
+          $error.= 'You entered unknown characters as your Name. Use A-Z, dots or slashes only. <br>';
+        }
     }
-}
 
-if (empty($email_from)) {
-    $error.= 'Please enter an Email Address. <br>';
-} else {
-    if(!preg_match($email_exp, $email_from)) {
-      $error.= 'Please enter a valid Email Address. <br>';
+    if (empty($subject)) {
+        // $error.= 'Please enter a Subject. <br>';
+    } else {
+        if(!preg_match($string_exp, $name)) {
+          $error.= 'You entered unknown characters as your Subject. Use A-Z, dots or slashes only. <br>';
+        }
     }
-}
 
-if (empty($message)) {
-    $error.= 'Please enter a Message. <br>';
-} else {
-    if(strlen($message) < 3) {
-      $error.= 'Please enter a Message. <br>';
+    if (empty($email_from)) {
+        $error.= 'Please enter an Email Address. <br>';
+    } else {
+        if(!preg_match($email_exp, $email_from)) {
+          $error.= 'Please enter a valid Email Address. <br>';
+        }
+    }
+
+    if (empty($message)) {
+        $error.= 'Please enter a Message. <br>';
+    } else {
+        if(strlen($message) < 3) {
+          $error.= 'Please enter a Message. <br>';
+        }
     }
 }
 
@@ -61,7 +66,7 @@ if (empty($error)) {
     sendEmail($name, $email_from, $email_to, $subject, $message);
 } else{
     echo '<div class="block"><div class="alert red">'.$error.'</div></div>';
-    exit;
+    exit(1);
 }
 
 // Send email method
