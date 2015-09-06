@@ -55,7 +55,7 @@
  *  User styles
  */
 .masonry {
-    float: left;
+    // float: left; // removed due to Firefox not scaling down .masonry on smaller devices
 }
 .masonry:before, .masonry:after {
     display: table;
