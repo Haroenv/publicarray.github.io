@@ -41,7 +41,7 @@
                 <div class="b-60 block">
                     <h1>Hi. I'm Sebastian Schmidt</h1>
                     <p class="subline">Student at Griffith University, Web Developer
-                    and a snap-happy Photographer. <br><small>I am currently studying at Gold Coast, Australia.</small></p>
+                    and a snap-happy Photographer. <br><small>I am studying at the Gold Coast, Australia.</small></p>
                     <a data-scroll class="btn center" href="#experience">Wondering what I do?</a>
                 </div>
             </div>
@@ -53,8 +53,10 @@
                 </div>
                 <div class="b-30 block shadow">
                     <br>
-                    <h3>I Like to Learn</h3>
+                    <h3>About Me</h3>
                     <p>Currently I am studying a bachelor in Information Technology and Multimedia.</p>
+                    <p>I kave keen a interest in nature, greenenergy, Internet privacy &amp; security, equality and free speech.</p>
+                    <p>I strongly believe websites should be fast for everyone, free, simple, secure and not evade the privacy of it's users.<p>
                 </div>
                 <div class="b-30 block shadow">
                     <br>
@@ -66,7 +68,8 @@
                 <div class="b-30 block shadow">
                     <br>
                     <h3>I like to Code and Design</h3>
-                    <p> Currently I can code in HTML/CSS, JavaScript, PHP, C++ and Java. I also have experience in jQuery, Bootstrap, Laravel 4 and SQL (specifically MySQL, Postgress and SQLite).</p>
+                    <p>Currently I can code in HTML/CSS, JavaScript, PHP, C++ and Java. I also have experience in jQuery, Bootstrap, Laravel 4 and SQL (specifically MySQL, Postgress and SQLite).</p>
+                    <p>Interested in code? checkout my <a href="//github.com/publicarray/">github profile</a>.</p>
                 </div>
                 <div class="block">
                     <br>
@@ -236,6 +239,7 @@
                             }
                         }
                     }
+
                     function getParm() {
                         var title = document.getElementsByName('title')[0].value;
                         var name = document.getElementsByName('name')[0].value;
@@ -263,7 +267,7 @@
                                         document.getElementById("response").innerHTML = styleError("Unable to connect to the Internet. Please try again later.");
                                     }
                                     else if(this.readyState == 4 && (this.status < 200 || this.status >= 400)) {
-                                        document.getElementById("response").innerHTML = styleError("The request failed with status code: " + this.status);
+                                        document.getElementById("response").innerHTML = styleError("The request failed with status code: " + this.status + " ("+ this.statusText + ")");
                                     }
                                 };
                                 rq.send(getParm());
