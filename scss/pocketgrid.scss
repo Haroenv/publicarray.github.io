@@ -46,8 +46,8 @@
 
 .block {
     float: left;
-    width: 100%;
     padding: 0 20px;
+    width: 100%;
 }
 
 /*
@@ -55,6 +55,7 @@
  *  User styles
  */
 .masonry {
+    width: 100%;
     // float: left; // removed due to Firefox not scaling down .masonry on smaller devices
 }
 .masonry:before, .masonry:after {
