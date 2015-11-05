@@ -55,7 +55,7 @@
                     <br>
                     <h3>About Me</h3>
                     <p>Currently I am studying a bachelor in Information Technology and Multimedia.</p>
-                    <p>I have keen a interest in nature, green-energy, Internet privacy &amp; security, equality and free speech.</p>
+                    <p>I have a keen interest in nature, green-energy, Internet privacy &amp; security, equality and free speech.</p>
                     <p>I strongly believe websites should be fast for everyone, simple, secure and not evade the privacy of it's users.<p>
                 </div>
                 <div class="b-30 block shadow">
@@ -241,13 +241,22 @@
                     }
 
                     function getParm() {
-                        var title = document.getElementsByName('title')[0].value;
-                        var name = document.getElementsByName('name')[0].value;
-                        var email = document.getElementsByName('email')[0].value;
-                        var subject = document.getElementsByName('subject')[0].value;
-                        var message = document.getElementsByName('message')[0].value;
-                        return 'title='+title + '&name='+name + '&email='+email + '&subject='+subject + '&message='+message;
+                        return {
+                            name: document.getElementsByName('name')[0].value,
+                            email: document.getElementsByName('email')[0].value,
+                            _subject: document.getElementsByName('subject')[0].value,
+                            _gotcha: document.getElementsByName('title')[0].value,
+                            message: document.getElementsByName('message')[0].value
+                        };
                     }
+                    // function getParm() {
+                    //     var title = document.getElementsByName('title')[0].value;
+                    //     var name = document.getElementsByName('name')[0].value;
+                    //     var email = document.getElementsByName('email')[0].value;
+                    //     var subject = document.getElementsByName('subject')[0].value;
+                    //     var message = document.getElementsByName('message')[0].value;
+                    //     return 'title='+title + '&name='+name + '&email='+email + '&subject='+subject + '&message='+message;
+                    // }
                     function styleError(msg){
                         return '<div class="block"><div class="alert red">' + msg + '</div></div>';
                     }
@@ -257,11 +266,12 @@
                         if(rq) {
                             // Success; attempt to use an Ajax request to a PHP script to send the e-mail
                             try {
-                                rq.open('POST', 'https://publicarray.com/email_action.php', true);
-                                rq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                                rq.open('POST', 'https://formspree.io/publicarray@posteo.net', true);
+                                rq.setRequestHeader("Content-type","application/json");
                                 rq.onreadystatechange = function() {
                                     if(this.readyState == 4 && this.status == 200) {
                                         document.getElementById("response").innerHTML = this.responseText;
+                                        // document.getElementById("response").innerHTML = this.response;
                                     }
                                     else if(this.readyState == 4 && (this.status === 0)) {
                                         document.getElementById("response").innerHTML = styleError("Unable to connect to the Internet. Please try again later.");
